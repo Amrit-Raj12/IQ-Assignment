@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>User View</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container">
+      <h2><%= title %></h2>
+      <a href="/" class="btn btn-sm mx-2 btn-success">Home</a><a href="/specific_user" class="btn btn-sm btn-primary">show users of id 1 or 5 or 7</a><br/><br>
+      <table class="table table-dark table-striped">
+        <thead>
+          <tr>
+            <th>Admin Id</th>
+            <th>User Name</th>
+            <th>Created At</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% tb_admin.forEach(function(tb_admin){ %>
+            <tr>
+              <td><%= tb_admin.admin_id %></td>
+              <td><%= tb_admin.user_name %></td>
+              <td><%= tb_admin.created_at %></td>
+              <td>
+              </td>
+            </tr>
+        <%  }); %>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

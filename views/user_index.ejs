@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>User View</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container">
+      <h2><%= title %></h2>
+      <a href="/" class="btn btn-sm my-3 mx-2 btn-success">Home</a>
+      <a href="/add" class="btn btn-sm my-3 float-right btn-primary">Add People</a> <a href="/specific_user" class="btn btn-sm my-3 btn-primary">show users of id 1 or 5 or 7</a>
+      <a href="/admin_user" class="btn btn-sm my-3 mx-2 btn-primary">Show user whose admin has at least 3 users</a><br />
+      <table class="table table-dark table-striped">
+        <thead>
+          <tr>
+            <th>User Id</th>
+            <th>Admin Id</th>
+            <th>Name</th>
+            <th>Created At</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% tb_user.forEach(function(tb_user){ %>
+            <tr>
+              <td><%= tb_user.user_id %></td>
+              <td><%= tb_user.admin_id %></td>
+              <td><%= tb_user.user_name %></td>
+              <td><%= tb_user.created_at %></td>
+              <td>
+                  <a href="edit/<%= tb_user.admin_id %>" class="btn btn-sm btn-primary">Edit</a>
+                <a href="delete/<%= tb_user.user_id %>" class="btn btn-sm btn-danger">Delete</a>
+              </td>
+            </tr>
+        <%  }); %>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
